@@ -13,7 +13,9 @@ public class Test : MonoBehaviour {
 	}
 	
 	void Update () {
-		transform.rotation = match.rotation;
+		Vector3 e = match.eulerAngles;
+
+		transform.localRotation = Quaternion.Euler(-e.x, -e.z, 0);
 		transform.position = originalPos - (match.position * factor);
 		// transform.LookAt(target);
 	}
